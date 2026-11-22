@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2a2d6e">
+<title>Live Translator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="setup">
+  <h1>Live Translator</h1>
+  <p class="sub">Put the phone between you. Each side reads in its own language, and the translation is spoken aloud.</p>
+  <label>They speak <select id="langThem"></select></label>
+  <label>You speak <select id="langMe"></select></label>
+  <label class="chk"><input type="checkbox" id="speakOn" checked> Read translations aloud</label>
+  <button id="go">Start listening</button>
+  <p id="msg" role="status"></p>
+  <p class="note">Sound follows your phone’s default mic and speaker. Connect or disconnect Bluetooth and it switches on its own.</p>
+</main>
+
+<section id="stage" hidden>
+  <div class="panel top" id="pTop"><div class="log" id="logTop"></div></div>
+  <div class="mid">
+    <button id="end">End</button>
+    <button id="swap" aria-label="Switch who is speaking">
+      <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v14M3 14l4 4 4-4M17 20V6M13 10l4-4 4 4"/></svg>
+    </button>
+    <button id="voice" aria-pressed="true">Voice on</button>
+    <span id="who"></span>
+  </div>
+  <div class="panel bottom" id="pBot"><div class="log" id="logBot"></div></div>
+</section>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
